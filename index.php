@@ -1,3 +1,20 @@
+<?php
+include("includes/classes/Signup.class.php");
+$signup = new Signup;
+
+if($signup->setEmail("katt@email.com")){
+    echo "korrekt email! ";
+}else{
+    echo "felaktig email";
+};
+
+
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
