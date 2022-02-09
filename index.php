@@ -2,11 +2,10 @@
 include("includes/classes/Signup.class.php");
 $signup = new Signup;
 
-if($signup->setEmail("katt@email.com")){
-    echo "korrekt email! ";
-}else{
-    echo "felaktig email";
-};
+
+
+if($signup->setEmail("hund@email.com")){;
+}
 
 
 
@@ -25,6 +24,26 @@ if($signup->setEmail("katt@email.com")){
 </head>
 <body>
     <h1>Katthjälpen</h1>
+<h2>Anmälan</h2>
+    <form action="index.php" method="POST">
+        <label for="name">Namn: </label><br>
+        <input type="text" id="name" name="name"><br>
+        <label for="email">E-post: </label><br>
+        <input type="email" id="email" name="email"><br>
+        <input type="submit" name="submit-btn">
+    </form>
+
+    <h2>Email-lista</h2>
+    <ul>
+    <?php
+    $email_list = $signup->getList();
+    foreach($email_list as $email){
+        echo "<li>$email</li>";
+    }
+    ?>
+    </ul>
     
+
+
 </body>
 </html>

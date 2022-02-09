@@ -40,6 +40,7 @@ class Signup
     #Get list of emails
     public function getList(): array
     {
+        return $this->email_list;
     }
 
     #Sätter man en email (kolla att den är korrekt) X
